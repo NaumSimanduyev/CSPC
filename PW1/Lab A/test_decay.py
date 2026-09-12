@@ -18,7 +18,8 @@ def test_starts_at_N0():
 
 
 def test_rejects_negative_rate():
-    assert simulate(1000, -0.4)
+    with pytest.raises(ValueError):
+        simulate(1000, -0.4)
 #   Check that calling simulate(...) with a negative lam raises a ValueError.
 #   Which pytest tool checks that an error is raised?
 
