@@ -16,3 +16,10 @@ conda activate cspc
 **Tests:** all except one with negative lambda(ValueError)
 **Conclusion:**
 - For huge loops and scientific calculations it is more preferred to use NumPy rather than common python tools. The bigger your data gets, the more NumPy is preferred ( in my test, it is 272 times faster).
+## PW1 - Lab B: Data, Plotting, and Automation
+**What the data showed:**
+- The observed counts (`decay_observed.csv`) drop from 5000 atoms at t=0 down to under 20 by t≈19.5s, following a clear decreasing curve that is steep at first and flattens out at later times.
+**Did it match the analytical law?**
+- Yes. Plotted side-by-side with the analytical curve N0\*exp(-λt) (λ=0.3), the observed data traces the same exponential decay shape and the same overall scale. The small point-to-point noise (visible mainly at large t, where counts are low) is expected statistical scatter, not a mismatch with the law.
+**Snakemake pipeline:**
+- The `Snakefile` defines a single rule that takes `decay_observed.csv` as input and runs `plot_STUDENT.py` to produce `figure.png`, the observed-vs-analytical comparison figure.
