@@ -26,6 +26,7 @@ N0 = observed[0]
 for i in range(len(observed)):
     analytical.append(N0*np.exp(-LAMBDA*t[i])) 
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4.5), sharex=True, sharey=True)
+
 ax1.scatter(t, observed, color="tab:green", label="Observed")
 ax1.set_title('Observed data')
 ax1.set_ylabel("The amount of atoms(N)")
@@ -39,5 +40,3 @@ fig.suptitle('Decay: Observed vs Analytical')
 
 plt.savefig("figure.png")
 plt.show()
-
-# TODO 4: save the figure as figure.png
